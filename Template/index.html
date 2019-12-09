@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet"> 
+    
+    <!-- Comment bellow line if you dont want to use jquery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <title>Document</title>
+    <style>
+      *{
+          padding: 0px;
+          margin: 0px;
+          font-family: 'Roboto', sans-serif;
+      }
+      .main-container{
+          width:95%;
+          margin: auto;
+          display: flex;
+          flex-direction: row;
+          flex-wrap: wrap;
+          height: 100%;
+          align-content: flex-start;
+          justify-content: stretch;
+      }
+      .child1{
+          flex: 1 1 300px; 
+          text-align: center;
+          background-color: #ffffff;
+      }
+      .child2{  
+          flex: 8 4 500px;
+          background-color: #ffffff;
+      }
+      .child1-container{
+          padding: 15px;
+      }
+
+      .child2-container{
+        padding: 1.5em;
+        min-height: 450px;
+        display: flex;
+        justify-content: center;
+        box-shadow: 0 2px 6px 0 rgba(0,0,0,.2);
+      }
+
+      .child1-container > img{
+        box-shadow: 0 2px 6px 0 rgba(0,0,0,.2);
+        margin-top: -5px;
+        width: 45%;
+        min-width: 200px;
+      }
+
+      .child1-container > img:hover{
+         transform: scale(1.07);
+      }
+
+      .navigation-container{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        width: 70%;
+        margin: auto;
+        height: auto;
+        justify-content: space-evenly;
+        align-items: center;
+      }
+
+      .navigation-container > a{
+        box-shadow: 0 2px 6px 0 rgba(0,0,0,.2);
+        border: 1px solid #dadbdb;
+        flex: 1 1 100px;
+        margin: 5px;
+      }
+
+      .navigation-container > a:hover{
+        box-shadow: 0 2px 6px 0 rgba(0,0,0,.2);
+        transform: scale(1.1);
+         
+      }
+
+      .prev, .next {
+        cursor: pointer;
+        position: absolute;
+        padding: 15px;
+        top: 45%;
+        color: white;
+        background-color: #f1f1f136;
+        font-weight: bold;
+        font-size: 21px;
+        transition: 0.6s ease;
+        border-radius: 0 3px 3px 0;
+        user-select: none; 
+    }
+    .next{
+        right: 25px;
+    }
+    .prev:hover, .next:hover {
+        background-color: white;
+        color: black;
+    }
+
+    .mySlides1{
+          text-align: center;
+          max-height: 400px;
+       
+      }
+      .mySlides1>img{
+         width: 100%;
+         height: 100%;
+         box-shadow: 0 4px 8px 0 rgba(0,0,0,.2),0 6px 20px 0 rgba(0,0,0,.2);
+
+      }
+
+       .text-container{
+        box-shadow: 0 2px 6px 0 rgba(0,0,0,.19);
+        width:95%;
+        padding: 15px;
+        margin: auto;
+
+      }
+
+     #headding > h1{
+        text-align: center;
+        font-weight: bold;
+        text-shadow: 5px 5px 4px rgb(0, 0, 0,0.5);
+      }
+      #headding{
+          padding: 5px;
+      }
+
+    </style>
+</head>
+<body>
+    <div class="text-container card mt-3" id="headding" >
+        <h1>Name Here</h1>
+    </div>
+        <div class="container-fluid" style="margin: 0px; padding: 0;">
+        
+        <div class="main-container mt-4 mb-5">
+                <div class="child1 mb-4">
+                        <div class="child1-container" style="text-align: center;">
+                                <img class="img-thumbnail" src="index.jpg" alt="">
+                        </div>
+                        <div class="navigation-container mt-4">
+                            <!-- Navigation, for aditional copy one, and past it at end and modify accordingly -->
+                                
+                                <a href="#" class="btn btn-outline-dark" role="button">Nav1 </a>
+                                <a href="#" class="btn btn-outline-dark" role="button">Nav2</a>
+                                <a href="#" class="btn btn-outline-dark" role="button">Nav3</a>
+                                <a href="#" class="btn btn-outline-dark" role="button">Nav4</a>
+                                <a href="#" class="btn btn-outline-dark" role="button">Nav5</a>
+                                <a href="#" class="btn btn-outline-dark" role="button">Nav6</a>
+
+                            <!-- navigation section ends here -->
+                        </div>
+                </div>
+                <div class="child2 mt-2">
+                   <div class="child2-container card " >
+                    <!-- Actual Content below change src attribute to required image value -->
+                     <div class="mySlides1">
+                        <img src="img_nature.jpg" style="width:100%; ">
+                    </div>
+
+                    <div class="mySlides1">
+                        <img src="img_snow.jpg" style="width:100%; ">
+                    </div>
+
+                    <div class="mySlides1">
+                        <img src="img_mountains.jpg" style="width:100%; ">
+                    </div>
+
+                     <div class="mySlides1">
+                        <img src="img_lights.jpg" style="width:100%; ">
+                    </div>
+
+                   <a class="prev" onclick="plusSlides(-1, 0)">&#10094;</a>
+                   <a class="next" onclick="plusSlides(1, 0)">&#10095;</a>
+                     <!-- Content ends here -->
+                   </div>
+                </div>
+        </div>
+        <div class="text-container card">
+            <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum nam repellat velit neque. Quam inventore eaque aut exercitationem sunt unde, alias illo, in rerum soluta nulla laborum asperiores voluptatum tempora.
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum nam repellat velit neque. Quam inventore eaque aut exercitationem sunt unde, alias illo, in rerum soluta nulla laborum asperiores voluptatum tempora.
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum nam repellat velit neque. Quam inventore eaque aut exercitationem sunt unde, alias illo, in rerum soluta nulla laborum asperiores voluptatum tempora.
+            </p>
+        </div>
+
+         <div class="text-container card mt-3 mb-3">
+            <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum nam repellat velit neque. Quam inventore eaque aut exercitationem sunt unde, alias illo, in rerum soluta nulla laborum asperiores voluptatum tempora.
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum nam repellat velit neque. Quam inventore eaque aut exercitationem sunt unde, alias illo, in rerum soluta nulla laborum asperiores voluptatum tempora.
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum nam repellat velit neque. Quam inventore eaque aut exercitationem sunt unde, alias illo, in rerum soluta nulla laborum asperiores voluptatum tempora.
+            </p>
+        </div>      
+        </div>
+
+    <script>
+                var slideIndex = [1,1];
+                var slideId = ["mySlides1"]
+                
+                showSlides(1, 0);
+
+// comment bellow 3 lines of code if you don't want automatic slideshow
+                setInterval(function(){
+                    plusSlides(1, 0)
+                },3000)
+
+
+                function plusSlides(n, no) {
+                     showSlides(slideIndex[no] += n, no);
+                }
+
+                function showSlides(n, no) {
+                var i;
+                var x = document.getElementsByClassName(slideId[no]);
+                if (n > x.length) 
+                {slideIndex[no] = 1}    
+                if (n < 1) {slideIndex[no] = x.length}
+                for (i = 0; i < x.length; i++) {
+                    x[i].style.display = "none";
+                }
+
+                // comment bellow line if you dont want to use jquery
+                   $(x[slideIndex[no]-1]).fadeIn(2000)
+                
+                // uncomment bellow line if you dont want to use jquery
+                
+                // x[slideIndex[no]-1].style.display = "block";  
+                }
+</script>
+</body>
+</html>

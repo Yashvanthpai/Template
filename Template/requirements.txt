@@ -1,0 +1,6 @@
+Make sure to connect to internet as template make use of jquery cdn version for fadein effect in imageslide show.
+
+
+make sure all images used for slide show have same width and height (same resolution)
+
+make sure to place all image in same repo(used for slideshow).
